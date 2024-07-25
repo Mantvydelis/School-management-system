@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mokyklos_valdymo_sistema.Models;
+using System;
 
 namespace ManoPrograma
 {
@@ -7,7 +8,7 @@ namespace ManoPrograma
         public static void Main(string[] args)
         {
 
-
+            TeacherControl teacherControl = new TeacherControl();
 
         }
 
