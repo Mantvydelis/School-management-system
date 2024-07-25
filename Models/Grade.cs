@@ -8,6 +8,18 @@ namespace Mokyklos_valdymo_sistema.Models
 {
     public class Grade
     {
+        public string Topic { get; set; }
+        public int CompletionDate { get; set; }
 
+        public int Grade { get; set; }
+
+        public Grade (string topic, int comletiondate, int grade)
+        {
+            Topic = topic;
+            CompletionDate = comletiondate;
+            Grade = grade;
+        }
     }
+
+
 }
