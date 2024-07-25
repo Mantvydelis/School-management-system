@@ -27,7 +27,15 @@ namespace Mokyklos_valdymo_sistema.Models
 
         public string GetInfo()
         {
-            return Name + " " + Surname + " " + Age + " " + Class + " " + Grades;
+            string allGradesString = "";
+
+            foreach (var grade in Grades)
+            {
+                allGradesString += grade.ActualGrade.ToString();
+
+            }
+
+            return Name + " " + Surname + " " + Age + " " + Class + " " + allGradesString;
 
         }
 
