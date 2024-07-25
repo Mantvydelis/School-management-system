@@ -13,11 +13,14 @@ namespace Mokyklos_valdymo_sistema.Models
         public string Surname { get; set; }
         public string Subject { get; set; }
 
-        public Teacher(string name, string surname, string subject)
+        public List<Grade> GivenGrades { get; set; }
+
+        public Teacher(string name, string surname, string subject, List<Grade> givenGrades)
         {
             Name = name;
             Surname = surname;
             Subject = subject;
+            GivenGrades = givenGrades;
         }
 
         public string GetInfo()
@@ -25,5 +28,16 @@ namespace Mokyklos_valdymo_sistema.Models
             return Name + " " + Surname + " Subject - " + Subject;
         }
 
+        public void AddGivenGrade(Grade grade)
+        {
+            GivenGrades.Add(grade);
+        }
+
+        public List<Grade> GetAllTeacherGrades (Teacher teacher)
+        {
+            return teacher.GivenGrades;
+        }
+
     }
+
 }
