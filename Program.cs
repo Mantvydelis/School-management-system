@@ -43,8 +43,7 @@ namespace ManoPrograma
                             int age = int.Parse(Console.ReadLine());
                             Console.Write("Įveskite mokinio klasę: ");
                             string clas = Console.ReadLine();
-                            List<Grade> pupil1 = new List<Grade>();
-                            SchoolService.AddPupil(new Pupil(pupilName, pupilSurname, age, clas, pupil1));
+                            schoolService.AddPupil(new Pupil(pupilName, pupilSurname, age, clas));
                             break;
 
                         case "2":
@@ -57,17 +56,56 @@ namespace ManoPrograma
                             Console.WriteLine("Enter teacher's subject: ");
                             string teacherSubject = Console.ReadLine();
 
-                            SchoolService.AddTeacher(new Teacher(
+                            schoolService.AddTeacher(new Teacher(teacherName, teacherSurname, teacherSubject));
 
                             break;
+
+                        case "3":
+                            Console.WriteLine("Enter pupil's name: ");
+                            pupilName = Console.ReadLine();
+
+                            Console.WriteLine("Enter pupil's surname: ");
+                            pupilSurname = Console.ReadLine();
+
+                            Console.WriteLine("Enter teacher's name: ");
+                            teacherName = Console.ReadLine();
+
+                            Console.WriteLine("Enter teacher's surname: ");
+                            teacherSurname = Console.ReadLine();
+
+                            Console.WriteLine("Enter teacher's subject: ");
+                            teacherSubject = Console.ReadLine();
+
+                            Console.WriteLine("Enter pupil's grade: ");
+                            int pupilGrade = int.Parse(Console.ReadLine());
+
+                            Grade grade = new Grade(teacherSubject, DateTime.Now.ToString(), pupilGrade);
+
+                            schoolService.AddGrade(pupilName, pupilSurname, teacherName, teacherSurname, grade);
+                            break;
+
+                        case "4":
+                            var allPupils = schoolService.GetAllPupils();
+                            foreach (var pupil in pupils)
+                            {
+                                Console.WriteLine(pupil.GetInfo());
+                            }
+
+                            break;
+
                     }
 
 
 
 
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error:  {ex.Message}");
+                }
+            }
 
+
+        }
     }
-
-
-        } 
+}

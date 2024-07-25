@@ -16,13 +16,13 @@ namespace Mokyklos_valdymo_sistema.Models
         public string Class { get; set; }
         public List<Grade> Grades { get; set; }
 
-        public Pupil(string name, string surname, int age, string clas, List<Grade> grades)
+        public Pupil(string name, string surname, int age, string clas)
         {
             Name = name;
             Surname = surname;
             Age = age;
             Class = clas;
-            Grades = grades;
+            Grades = new List<Grade>();
         }
 
         public string GetInfo()

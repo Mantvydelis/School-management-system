@@ -15,12 +15,12 @@ namespace Mokyklos_valdymo_sistema.Models
 
         public List<Grade> GivenGrades { get; set; }
 
-        public Teacher(string name, string surname, string subject, List<Grade> givenGrades)
+        public Teacher(string name, string surname, string subject)
         {
             Name = name;
             Surname = surname;
             Subject = subject;
-            GivenGrades = givenGrades;
+            GivenGrades = new List<Grade>();
         }
 
         public string GetInfo()

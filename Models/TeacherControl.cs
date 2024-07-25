@@ -26,9 +26,9 @@ namespace Mokyklos_valdymo_sistema.Models
             return Teachers;
         }
 
-        public void AddGradeFromTeacher(Pupil pupil, Teacher teacher, Grade actualGrade)
+        public void AddGradeFromTeacher(Teacher teacher, Grade actualGrade)
         {
-            pupil.AddGrade(actualGrade);
+            //pupil.AddGrade(actualGrade);
             teacher.AddGivenGrade(actualGrade);
         }
 

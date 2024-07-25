@@ -27,26 +27,29 @@ namespace Mokyklos_valdymo_sistema.Service
             PupilControl.AddPupil(pupil);
         }
 
-        public void GetAllPupils()
+        public List<Pupil> GetAllPupils()
         {
-            PupilControl.GetAllPupils();
+            PupilControl.GetAllPupils(); 
+            return PupilControl.Pupils;
         }
 
-        public void GetAllTeachers()
+        public List<Teacher> GetAllTeachers()
         {
             TeacherControl.GetAllTeachers();
+            return TeacherControl.Teachers;
         }
 
-        public void GetPupilsGrades(string pupilsName, string pupilsSurname)
+        public List<Grade> GetPupilsGrades(string pupilsName, string pupilsSurname)
         {
             foreach (Pupil pupil in PupilControl.Pupils)
             {
                 if (pupil.Name == pupilsName && pupil.Surname == pupilsSurname)
                 {
-                    PupilControl.GetPupilsGrades(pupil);
+                    return PupilControl.GetPupilsGrades(pupil);
+                    
                 }
             }
-           
+            return null;
 
         }
 
