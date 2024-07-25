@@ -2,7 +2,7 @@
 
 namespace ManoPrograma
 {
-    public class BankoSistema
+    public class PagrindineKlase
     {
         public static void Main(string[] args)
         {
