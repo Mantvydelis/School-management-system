@@ -44,6 +44,8 @@ namespace ManoPrograma
                             Console.Write("Enter students's class: ");
                             string clas = Console.ReadLine();
                             schoolService.AddPupil(new Pupil(pupilName, pupilSurname, age, clas));
+
+
                             break;
 
                         case "2":
