@@ -31,7 +31,7 @@ namespace Mokyklos_valdymo_sistema.Models
 
             foreach (var grade in Grades)
             {
-                allGradesString += grade.ActualGrade.ToString();
+                allGradesString += grade.ActualGrade.ToString() + " ";
 
             }
 
