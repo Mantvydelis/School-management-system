@@ -31,11 +31,11 @@ namespace Mokyklos_valdymo_sistema.Models
 
             foreach (var grade in Grades)
             {
-                allGradesString += grade.ActualGrade.ToString() + " ";
+                allGradesString += grade.ActualGrade.ToString() + "-" + grade.Topic + " ";
 
             }
 
-            return Name + " " + Surname + " " + Age + " " + Class + " " + allGradesString;
+            return Name + " " + Surname + " " + Age + " " + Class + ". All grades: " + allGradesString;
 
         }
 

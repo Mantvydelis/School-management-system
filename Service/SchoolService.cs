@@ -73,7 +73,7 @@ namespace Mokyklos_valdymo_sistema.Service
 
             foreach (Teacher teacher in TeacherControl.Teachers)
             {
-                if (teacher.Name == pupilName && teacher.Surname == pupilSurname)
+                if (teacher.Name == teacherName && teacher.Surname == teacherSurname)
                 {
                     teacher.AddGivenGrade(grade);
                 }

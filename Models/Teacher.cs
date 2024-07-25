@@ -25,7 +25,14 @@ namespace Mokyklos_valdymo_sistema.Models
 
         public string GetInfo()
         {
-            return Name + " " + Surname + " Subject - " + Subject;
+            string allGivenString = "";
+
+            foreach (var grade in GivenGrades)
+            {
+                allGivenString += grade.ActualGrade.ToString() + " ";
+            }
+
+            return Name + " " + Surname + " Subject - " + Subject + ". All given grades: " + allGivenString;
         }
 
         public void AddGivenGrade(Grade grade)
