@@ -43,6 +43,25 @@ namespace ManoPrograma
                             int age = int.Parse(Console.ReadLine());
                             Console.Write("Enter students's class: ");
                             string clas = Console.ReadLine();
+
+                            bool IsThere = false;
+
+                            foreach (var p in pupils)
+                            {
+
+                                if (pupilName == p.Name && pupilSurname == p.Surname)
+                                {
+                                    Console.WriteLine("This student already exists.");
+                                    IsThere = true;
+                                    break;
+                                }
+
+                            }
+                            if (IsThere == false)
+                            {
+                                schoolService.AddPupil(new Pupil(pupilName, pupilSurname, age, clas));
+                            }
+                            
                             schoolService.AddPupil(new Pupil(pupilName, pupilSurname, age, clas));
 
 
@@ -58,7 +77,24 @@ namespace ManoPrograma
                             Console.WriteLine("Enter teacher's subject: ");
                             string teacherSubject = Console.ReadLine();
 
-                            schoolService.AddTeacher(new Teacher(teacherName, teacherSurname, teacherSubject));
+                            bool IsThere2 = false;
+
+                            foreach (var p in teachers)
+                            {
+
+                                if (teacherName == p.Name && teacherSurname == p.Surname)
+                                {
+                                    Console.WriteLine("This teacher already exists.");
+                                    IsThere2 = true;
+                                    break;
+                                }
+
+                            }
+                            if (IsThere2 == false)
+                            {
+                                schoolService.AddTeacher(new Teacher(teacherName, teacherSurname, teacherSubject));
+                            }
+
 
                             break;
 
@@ -81,9 +117,18 @@ namespace ManoPrograma
                             Console.WriteLine("Enter pupil's grade: ");
                             int pupilGrade = int.Parse(Console.ReadLine());
 
-                            Grade grade = new Grade(teacherSubject, DateTime.Now.ToString(), pupilGrade);
+                            if (pupilGrade >= 1 && pupilGrade <= 10)
+                            {
+                                Grade grade = new Grade(teacherSubject, DateTime.Now.ToString(), pupilGrade);
 
-                            schoolService.AddGrade(pupilName, pupilSurname, teacherName, teacherSurname, grade);
+                                schoolService.AddGrade(pupilName, pupilSurname, teacherName, teacherSurname, grade);
+                            }
+                            else
+                            {
+                                Console.WriteLine("There is no such grade");
+                            }
+
+
                             break;
 
                         case "4":
