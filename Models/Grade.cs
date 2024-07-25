@@ -11,13 +11,13 @@ namespace Mokyklos_valdymo_sistema.Models
         public string Topic { get; set; }
         public int CompletionDate { get; set; }
 
-        public int Mark { get; set; }
+        public int ActualGrade { get; set; }
 
-        public Grade (string topic, int comletiondate, int mark)
+        public Grade (string topic, int comletiondate, int actualGrade)
         {
             Topic = topic;
             CompletionDate = comletiondate;
-            Mark = mark;
+            ActualGrade = actualGrade;
         }
     }
 

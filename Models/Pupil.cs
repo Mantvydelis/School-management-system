@@ -33,7 +33,7 @@ namespace Mokyklos_valdymo_sistema.Models
 
         public void AddGrade(Grade grade)
         {
-            grade.Add(grade);
+            Grades.Add(grade);
 
         }
 
