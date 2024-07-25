@@ -21,7 +21,13 @@ namespace Mokyklos_valdymo_sistema.Models
 
         public void AddPupil(Pupil pupil)
         {
-            Pupils.Add(pupil);
+
+
+         Pupils.Add(pupil);
+
+            
+
+
         }
         public List<Pupil> GetAllPupils()
         {
@@ -33,8 +39,5 @@ namespace Mokyklos_valdymo_sistema.Models
 
             return pupil.Grades;
         }
-
-
-
     }
 }
