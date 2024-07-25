@@ -19,14 +19,14 @@ namespace ManoPrograma
 
             while (true)
             {
-                Console.WriteLine("1. Pridėti mokinį");
-                Console.WriteLine("2. Pridėti mokytoją");
-                Console.WriteLine("3. Pridėti pažymį");
-                Console.WriteLine("4. Peržiūrėti visus mokinius");
-                Console.WriteLine("5. Peržiūrėti visus mokytojus");
-                Console.WriteLine("6. Peržiūrėti mokinio pažymius");
-                Console.WriteLine("0. Išeiti");
-                Console.Write("Pasirinkite veiksmą: ");
+                Console.WriteLine("1. Add pupil");
+                Console.WriteLine("2. Add teacher");
+                Console.WriteLine("3. Add grade");
+                Console.WriteLine("4. Review all students");
+                Console.WriteLine("5. Review all teachers");
+                Console.WriteLine("6. Review all grades");
+                Console.WriteLine("0. Leave");
+                Console.Write("Select an option: ");
                 string choice = Console.ReadLine();
 
 
@@ -35,13 +35,13 @@ namespace ManoPrograma
                     switch (choice)
                     {
                         case "1":
-                            Console.Write("Įveskite mokinio vardą: ");
+                            Console.Write("Enter students's name: ");
                             string pupilName = Console.ReadLine();
-                            Console.Write("Įveskite mokinio pavardę: ");
+                            Console.Write("Enter students's surname: ");
                             string pupilSurname = Console.ReadLine();
-                            Console.Write("Įveskite mokinio amžių: ");
+                            Console.Write("Enter students's age: ");
                             int age = int.Parse(Console.ReadLine());
-                            Console.Write("Įveskite mokinio klasę: ");
+                            Console.Write("Enter students's class: ");
                             string clas = Console.ReadLine();
                             schoolService.AddPupil(new Pupil(pupilName, pupilSurname, age, clas));
                             break;
@@ -93,6 +93,39 @@ namespace ManoPrograma
 
                             break;
 
+                        case "5":
+                            var allTeachers = schoolService.GetAllTeachers();
+                            foreach (var teacher in teachers)
+                            {
+                                Console.WriteLine(teacher.GetInfo());
+                            }
+
+                            break;
+
+                        case "6":
+
+                            Console.Write("Enter pupil's name: ");
+                            pupilName = Console.ReadLine();
+                            Console.Write("Enter pupil's surname: ");
+                            pupilSurname = Console.ReadLine();
+                            var grades = schoolService.GetPupilsGrades(pupilName, pupilSurname);
+
+                            foreach (var p in grades)
+                            {
+                                Console.WriteLine($"{p.Topic}, {p.CompletionDate}, {p.ActualGrade}");
+                            }
+                            break;
+
+                        case "0":
+                            return;
+
+                        default:
+                            Console.WriteLine("Wrong choice.");
+                            break;
+
+
+
+
                     }
 
 
@@ -103,6 +136,8 @@ namespace ManoPrograma
                 {
                     Console.WriteLine($"Error:  {ex.Message}");
                 }
+
+                Console.WriteLine();
             }
 
 
