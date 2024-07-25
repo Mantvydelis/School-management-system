@@ -13,10 +13,10 @@ namespace Mokyklos_valdymo_sistema.Models
         public string Surname { get; set; }
 
         public int Age { get; set; }
-        public int Class { get; set; }
+        public string Class { get; set; }
         public List<Grade> Grades { get; set; }
 
-        public Pupil(string name, string surname, int age, int clas, List<Grade> grades)
+        public Pupil(string name, string surname, int age, string clas, List<Grade> grades)
         {
             Name = name;
             Surname = surname;

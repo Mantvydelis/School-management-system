@@ -14,6 +14,8 @@ namespace ManoPrograma
             TeacherControl teacherControl = new TeacherControl(teachers);
             List<Pupil> pupils = new List<Pupil>();
             PupilControl pupilControl = new PupilControl(pupils);
+            SchoolService schoolService = new SchoolService(pupilControl, teacherControl);
+
 
             while (true)
             {
@@ -49,9 +51,9 @@ namespace ManoPrograma
 
 
 
-            }
+                }
 
     }
 
 
-}
+        } 
