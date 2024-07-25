@@ -8,7 +8,10 @@ namespace ManoPrograma
         public static void Main(string[] args)
         {
 
-            TeacherControl teacherControl = new TeacherControl();
+            List<Teacher> teachers = new List<Teacher>();
+            TeacherControl teacherControl = new TeacherControl(teachers);
+
+
 
         }
 

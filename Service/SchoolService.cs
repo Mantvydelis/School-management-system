@@ -20,6 +20,8 @@ namespace Mokyklos_valdymo_sistema.Service
             TeacherControl = teacherControl;
         }
 
+
+
         public void AddPupil(Pupil pupil)
         {
             PupilControl.AddPupil(pupil);
