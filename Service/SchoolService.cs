@@ -19,5 +19,35 @@ namespace Mokyklos_valdymo_sistema.Service
             PupilControl = pupilControl;
             TeacherControl = teacherControl;
         }
+
+        public void AddPupil(Pupil pupil)
+        {
+            PupilControl.AddPupil(pupil);
+        }
+
+        public void GetAllPupils()
+        {
+            PupilControl.GetAllPupils();
+        }
+
+        public void GetAllTeachers()
+        {
+            TeacherControl.GetAllTeachers();
+        }
+
+        public void GetPupilsGrades(string pupilsName, string pupilsSurname)
+        {
+            foreach (Pupil pupil in PupilControl.Pupils)
+            {
+                if (pupil.Name == pupilsName && pupil.Surname == pupilsSurname)
+                {
+                    PupilControl.GetPupilsGrades(pupil);
+                }
+            }
+           
+
+        }
+
+
     }
 }
