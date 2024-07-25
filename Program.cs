@@ -43,9 +43,23 @@ namespace ManoPrograma
                             int age = int.Parse(Console.ReadLine());
                             Console.Write("Įveskite mokinio klasę: ");
                             string clas = Console.ReadLine();
-                            SchoolService.AddPupil(new Pupil(pupilName, pupilSurname, age, clas));
+                            List<Grade> pupil1 = new List<Grade>();
+                            SchoolService.AddPupil(new Pupil(pupilName, pupilSurname, age, clas, pupil1));
                             break;
 
+                        case "2":
+                            Console.WriteLine("Enter teacher's name: ");
+                            string teacherName = Console.ReadLine();
+
+                            Console.WriteLine("Enter teacher's surname: ");
+                            string teacherSurname = Console.ReadLine();
+
+                            Console.WriteLine("Enter teacher's subject: ");
+                            string teacherSubject = Console.ReadLine();
+
+                            SchoolService.AddTeacher(new Teacher(
+
+                            break;
                     }
 
 
