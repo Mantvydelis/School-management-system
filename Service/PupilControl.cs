@@ -5,8 +5,9 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Mokyklos_valdymo_sistema.Models;
 
-namespace Mokyklos_valdymo_sistema.Models
+namespace Mokyklos_valdymo_sistema.Service
 {
     public class PupilControl
     {
@@ -23,9 +24,9 @@ namespace Mokyklos_valdymo_sistema.Models
         {
 
 
-         Pupils.Add(pupil);
+            Pupils.Add(pupil);
 
-            
+
 
 
         }

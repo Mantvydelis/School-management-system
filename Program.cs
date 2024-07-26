@@ -62,7 +62,6 @@ namespace ManoPrograma
                                 schoolService.AddPupil(new Pupil(pupilName, pupilSurname, age, clas));
                             }
                             
-                            schoolService.AddPupil(new Pupil(pupilName, pupilSurname, age, clas));
 
 
                             break;
@@ -136,6 +135,7 @@ namespace ManoPrograma
                             foreach (var pupil in pupils)
                             {
                                 Console.WriteLine(pupil.GetInfo());
+                                
                             }
 
                             break;

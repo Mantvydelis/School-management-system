@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Mokyklos_valdymo_sistema.Models;
 
-namespace Mokyklos_valdymo_sistema.Models
+namespace Mokyklos_valdymo_sistema.Service
 {
     internal class TeacherControl
     {

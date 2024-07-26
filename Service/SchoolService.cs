@@ -29,8 +29,8 @@ namespace Mokyklos_valdymo_sistema.Service
 
         public List<Pupil> GetAllPupils()
         {
-            PupilControl.GetAllPupils(); 
-            return PupilControl.Pupils;
+            return PupilControl.GetAllPupils(); 
+            
         }
 
         public List<Teacher> GetAllTeachers()
